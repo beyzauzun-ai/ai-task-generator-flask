@@ -4,6 +4,11 @@ This project is an interactive AI-powered web application that generates insight
 
 ## 📸 Demo
 
+### 🖥️ User Interface
+![App UI](app-ui.png)
+
+### ⚙️ Backend / API
+![Backend](backend.png)
 
 ## 🚀 Features
 - AI-powered content generation (Gemini API)
