@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Antigravity Tasks</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            font-family: Arial;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 400px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff00cc;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Antigravity Tasks</h1>
+        <p>AI summary oluştur</p>
+        <button onclick="generate()">Generate</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function generate() {
+            document.getElementById("result").innerText =
+                "AI Trends: Generative AI, Specialized Models, Responsible AI...";
+        }
+    </script>
+
+</body>
+
+</html>
