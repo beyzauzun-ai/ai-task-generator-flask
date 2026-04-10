@@ -2,6 +2,10 @@
 
 This project is an interactive AI-powered web application that generates insights based on user input.
 
+## 📸 Demo
+
+![App Screenshot](your-image-name.png)
+
 ## 🚀 Features
 - AI-powered content generation (Gemini API)
 - Flask backend
