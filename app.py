@@ -20,7 +20,7 @@ def generate():
             topic = "AI trends in 2026"
 
         result = subprocess.check_output(
-            ["python", "agent.py", topic],
+            ["python3", "agent.py", topic],
             stderr=subprocess.STDOUT
         ).decode("utf-8", errors="replace")
 

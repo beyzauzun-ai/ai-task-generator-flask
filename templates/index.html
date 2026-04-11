@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antigravity Tasks</title>
+
     <style>
         body {
             margin: 0;
@@ -39,192 +40,121 @@
             margin-top: 8px;
             margin-bottom: 28px;
             color: #cfd3ff;
-            font-size: 16px;
         }
 
         label {
             display: block;
             margin-bottom: 10px;
-            font-size: 16px;
             font-weight: 600;
         }
 
         .input-row {
             display: flex;
             gap: 10px;
-            align-items: center;
         }
 
         input {
             flex: 1;
-            padding: 14px 16px;
+            padding: 14px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            font-size: 15px;
-            outline: none;
-        }
-
-        input::placeholder {
-            color: #c9c9d8;
         }
 
         button {
             width: 52px;
-            height: 52px;
+            border-radius: 14px;
             border: none;
-            border-radius: 16px;
             background: linear-gradient(135deg, #ff8fd8, #b66dff);
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 0 18px rgba(214, 112, 255, 0.35);
         }
 
         button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 22px;
-            margin-top: 22px;
-            margin-bottom: 14px;
-            font-weight: 600;
-            color: #d9dcff;
-        }
-
-        .tabs span:first-child {
-            border-bottom: 2px solid white;
-            padding-bottom: 4px;
-        }
-
-        .divider {
-            height: 1px;
-            background: rgba(255, 255, 255, 0.15);
-            margin-bottom: 16px;
+            opacity: 0.5;
         }
 
         .results {
-            min-height: 180px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 18px;
-            padding: 14px;
-            background: rgba(255, 255, 255, 0.04);
+            margin-top: 20px;
         }
 
         .task-card {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 10px;
             margin-bottom: 10px;
-            line-height: 1.5;
-            color: #f5f6ff;
-            word-break: break-word;
-        }
-
-        .task-card:last-child {
-            margin-bottom: 0;
         }
 
         .loading {
-            color: #d7dbff;
-            font-style: italic;
-        }
-
-        .footer-note {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 12px;
-            color: #cfd3ff;
+            opacity: 0.7;
         }
     </style>
 </head>
 
 <body>
+
     <div class="panel">
         <h1>Antigravity Tasks</h1>
         <div class="subtitle">Elevate your productivity.</div>
 
-        <label for="topic">What needs to be done?</label>
+        <label>What needs to be done?</label>
 
         <div class="input-row">
-            <input type="text" id="topic" placeholder="Örn: AI in education">
-            <button id="generateBtn" onclick="generate()">+</button>
+            <input id="topic" placeholder="Örn: AI in education">
+            <button id="btn" onclick="generate()">+</button>
         </div>
-
-        <div class="tabs">
-            <span>All</span>
-            <span>Active</span>
-            <span>Completed</span>
-        </div>
-
-        <div class="divider"></div>
 
         <div id="results" class="results">
-            <div class="task-card">No tasks found.</div>
+            <div class="task-card">No tasks yet</div>
         </div>
-
-        <div class="footer-note">AI may make mistakes. Double-check generated output.</div>
     </div>
 
     <script>
-        function generate() {
-            const topicInput = document.getElementById("topic");
-            const resultBox = document.getElementById("results");
-            const btn = document.getElementById("generateBtn");
-
-            const topic = topicInput.value.trim();
+        async function generate() {
+            const topic = document.getElementById("topic").value.trim();
+            const results = document.getElementById("results");
+            const btn = document.getElementById("btn");
 
             btn.disabled = true;
 
-            resultBox.innerHTML = `
+            results.innerHTML = `
                 <div class="task-card">Konu: ${topic || "AI trends in 2026"}</div>
-                <div class="task-card loading">API isteği gönderiliyor...</div>
+                <div class="task-card loading">Yükleniyor...</div>
             `;
 
-            fetch("/generate", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ topic: topic })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    resultBox.innerHTML = "";
-
-                    let output = data.result || data.results || data.response || "Sonuç alınamadı.";
-
-                    resultBox.innerHTML += `
-                    <div class="task-card">Konu: ${topic || "AI trends in 2026"}</div>
-                `;
-
-                    if (Array.isArray(output)) {
-                        output.forEach(item => {
-                            resultBox.innerHTML += `<div class="task-card">${item}</div>`;
-                        });
-                    } else {
-                        const parts = String(output)
-                            .split("\n")
-                            .filter(line => line.trim() !== "");
-
-                        parts.forEach(line => {
-                            resultBox.innerHTML += `<div class="task-card">${line}</div>`;
-                        });
-                    }
-
-                    btn.disabled = false;
-                })
-                .catch(err => {
-                    resultBox.innerHTML = `<div class="task-card">Hata: ${err}</div>`;
-                    btn.disabled = false;
+            try {
+                const res = await fetch("/generate", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ topic })
                 });
+
+                const data = await res.json();
+
+                results.innerHTML = "";
+
+                let output = data.result || "Sonuç yok";
+
+                results.innerHTML += `<div class="task-card"><b>Konu:</b> ${topic}</div>`;
+
+                output.split("\n").forEach(line => {
+                    if (line.trim() !== "") {
+                        results.innerHTML += `<div class="task-card">${line}</div>`;
+                    }
+                });
+
+            } catch (err) {
+                results.innerHTML = `<div class="task-card">Hata: ${err}</div>`;
+            }
+
+            btn.disabled = false;
         }
     </script>
+
 </body>
 
 </html>
