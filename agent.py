@@ -1,8 +1,8 @@
 import os
 import sys
-import time
 from dotenv import load_dotenv
 from litellm import completion
+
 
 def main() -> None:
     load_dotenv()
@@ -12,43 +12,30 @@ def main() -> None:
         print("GEMINI_API_KEY bulunamadı.")
         return
 
-    if len(sys.argv) > 1:
-        topic = sys.argv[1]
-    else:
-        topic = "AI trends in 2026"
+    topic = sys.argv[1].strip() if len(sys.argv) > 1 else "AI trends in 2026"
 
-    prompt = f"Give a short summary about {topic} with 3 bullet points."
+    prompt = f"""
+Give a short summary about "{topic}" with 3 bullet points.
+Keep it clear, simple, and readable.
+"""
 
-    print(f"Konu: {topic}")
-    print("API isteği gönderiliyor...")
+    try:
+        response = completion(
+            model="gemini/gemini-1.5-flash",
+            api_key=api_key,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.7,
+            max_tokens=300,
+        )
 
-    response = None
+        content = response["choices"][0]["message"]["content"]
+        print(content)
 
-    for i in range(3):
-        try:
-            response = completion(
-                model="gemini/gemini-2.5-flash-lite",
-                api_key=api_key,
-                timeout=60,
-                max_tokens=250,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            break
-        except Exception:
-            print("Tekrar deneniyor...", i + 1)
-            time.sleep(5)
+    except Exception as e:
+        print(f"Agent hatası: {str(e)}")
 
-    if response is None:
-        print("API şu anda cevap vermiyor. Lütfen biraz sonra tekrar deneyin.")
-        return
-
-    result = response["choices"][0]["message"]["content"]
-    print(result)
-
-    with open("AI_Trends_2026.md", "w", encoding="utf-8") as f:
-        f.write(result)
 
 if __name__ == "__main__":
     main()
