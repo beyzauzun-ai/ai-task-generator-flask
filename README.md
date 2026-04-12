@@ -21,7 +21,7 @@ An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini 
 - Gemini API support
 - Deployed on Render
 
-## 🧰Tech Stack
+## 🧰 Tech Stack
 - Python
 - Flask
 - JavaScript
@@ -30,7 +30,7 @@ An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini 
 - LiteLLM
 - Render
 
-## 🗂️Project Structure
+## 🗂️ Project Structure
 ```bash
 ai-task-generator-flask/
 │
@@ -77,7 +77,7 @@ AI in healthcare
 
 This project is deployed on Render.
 
-## 📝Notes
+## 📝 Notes
 AI responses may vary depending on the prompt
 API key is required to run the project locally
 
