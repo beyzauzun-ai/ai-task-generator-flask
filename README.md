@@ -50,7 +50,7 @@ ai-task-generator-flask/
 git clone https://github.com/beyzauzun-ai/ai-task-generator-flask.git
 cd ai-task-generator-flask
 
-### Install dependencies:
+### ⛓️‍💥 Install dependencies:
 
 pip install -r requirements.txt
 
