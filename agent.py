@@ -7,7 +7,7 @@ def main():
     load_dotenv(override=True)
 
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
-    print("Key son 6 karakter:", api_key[-6:] if api_key else "yok")
+    
     if not api_key:
         print("GEMINI_API_KEY bulunamadı.")
         return
