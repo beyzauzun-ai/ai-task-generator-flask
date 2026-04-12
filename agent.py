@@ -21,7 +21,7 @@ Keep it clear, simple, and readable.
 
     try:
         response = completion(
-            model="gemini/gemini-1.5-flash",
+            model="gemini/gemini-2.0-flash",
             api_key=api_key,
             messages=[
                 {"role": "user", "content": prompt}
