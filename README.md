@@ -19,9 +19,13 @@ This project is an interactive AI-powered web application that generates insight
 - Deployed on Render
 
 ## 🛠️ Tech Stack
-- Python (Flask)
-- JavaScript / HTML
-- Google Gemini API
+- Python
+- Flask
+- JavaScript
+- HTML / CSS
+- Gemini API
+- LiteLLM
+- Render
 
 ## ▶️ How to Run
 
