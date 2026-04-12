@@ -1,6 +1,7 @@
 # AI Task Generator (Flask + Gemini)
 
 ✨ Generate smart tasks with AI and boost your productivity
+
 An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini API**.
 
 ### 🌐 Live Demo
