@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 import subprocess
+import sys
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
@@ -20,7 +21,7 @@ def generate():
             topic = "AI trends in 2026"
 
         result = subprocess.check_output(
-            ["python3", "agent.py", topic],
+            [sys.executable, "agent.py", topic],
             stderr=subprocess.STDOUT
         ).decode("utf-8", errors="replace")
 
