@@ -7,7 +7,7 @@ def main():
     load_dotenv(override=True)
 
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
-    
+
     if not api_key:
         print("GEMINI_API_KEY bulunamadı.")
         return
@@ -15,9 +15,18 @@ def main():
     topic = sys.argv[1].strip() if len(sys.argv) > 1 else "AI trends in 2026"
 
     prompt = f"""
-Give a short summary about "{topic}" with 3 bullet points.
-Keep it clear, simple, and readable.
-"""
+    You are a helpful assistant.
+
+    Topic: {topic}
+
+    Return exactly 3 short bullet points.
+    Rules:
+    - Do not write an introduction sentence.
+    - Do not write a conclusion.
+    - Each line must start with "- ".
+    - Keep each bullet point short and clear.
+    - Output only the 3 bullet points.
+    """
 
     try:
         response = completion(
