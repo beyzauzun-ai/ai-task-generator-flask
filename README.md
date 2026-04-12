@@ -2,7 +2,7 @@
 
 An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini API**.
 
-## Live Demo
+## 🌐Live Demo
 [Click here to try the app](https://ai-task-generator-flask.onrender.com)
 
 ## 📸 Demo
@@ -21,7 +21,7 @@ An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini 
 - Gemini API support
 - Deployed on Render
 
-## 🛠️ Tech Stack
+## 🧰Tech Stack
 - Python
 - Flask
 - JavaScript
@@ -30,7 +30,7 @@ An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini 
 - LiteLLM
 - Render
 
-## Project Structure
+## 🗂️Project Structure
 ```bash
 ai-task-generator-flask/
 │
@@ -43,7 +43,7 @@ ai-task-generator-flask/
     └── index.html
 ```
 
-## Installation
+## 🛠️ Installation
 
 ### Clone the repository:
 
@@ -58,7 +58,7 @@ Create a .env file and add your Gemini API key:
 
 GEMINI_API_KEY=your_api_key_here
 
-### Run the app locally:
+### ▶️ Run the app locally:
 
 python app.py
 ## Example Usage
@@ -73,13 +73,14 @@ AI in healthcare
 - Personalized treatment plans can be created with AI support.
 - AI accelerates drug discovery and pharmaceutical research.
 - 
-## Deployment
+## 🚀 Deployment
 
 This project is deployed on Render.
 
-## Notes
+## 📝Notes
 AI responses may vary depending on the prompt
 API key is required to run the project locally
+
 Author
 
 Beyza Uzun
