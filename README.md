@@ -27,26 +27,56 @@ This project is an interactive AI-powered web application that generates insight
 - LiteLLM
 - Render
 
-## ▶️ How to Run
-
+## Project Structure
 ```bash
-pip install -r requirements.txt
-python app.py
+ai-task-generator-flask/
+│
+├── app.py
+├── agent.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── templates/
+    └── index.html
 ```
-🔐 Environment Variables
 
-Create a .env file:
+##Installation
+
+###Clone the repository:
+
+git clone https://github.com/beyzauzun-ai/ai-task-generator-flask.git
+cd ai-task-generator-flask
+
+###Install dependencies:
+
+pip install -r requirements.txt
+
+Create a .env file and add your Gemini API key:
 
 GEMINI_API_KEY=your_api_key_here
 
-📌 Example Use
+###Run the app locally:
 
-Input:
-"AI in education"
+python app.py
+##Example Usage
 
-Output:
+###Input:
 
-Personalized learning
-Automated tasks
-Enhanced accessibility
+AI in healthcare
 
+###Output:
+
+- AI improves diagnostics by analyzing medical images and patient data.
+- Personalized treatment plans can be created with AI support.
+- AI accelerates drug discovery and pharmaceutical research.
+- 
+##Deployment
+
+This project is deployed on Render.
+
+##Notes
+AI responses may vary depending on the prompt
+API key is required to run the project locally
+Author
+
+Beyza Uzun
