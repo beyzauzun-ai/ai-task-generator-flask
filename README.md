@@ -72,7 +72,7 @@ AI in healthcare
 - AI improves diagnostics by analyzing medical images and patient data.
 - Personalized treatment plans can be created with AI support.
 - AI accelerates drug discovery and pharmaceutical research.
-- 
+  
 ## 🚀 Deployment
 
 This project is deployed on Render.
