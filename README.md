@@ -83,6 +83,14 @@ This project is deployed on Render.
 AI responses may vary depending on the prompt
 API key is required to run the project locally
 
+## 🏅 Certifications & Badges
+
+- 🟢 **Google Developer Program Member – 2026**  
+  🔗 https://developers.google.com/profile/badges/profile/created-profile?hl=tr
+
+- 📘 **Google Developers Learning Badge – 2026**  
+  🔗 https://developers.google.com/profile/badges/recognitions/learnings?hl=tr
+  
 Author
 
 Beyza Uzun
