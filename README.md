@@ -43,14 +43,14 @@ ai-task-generator-flask/
     └── index.html
 ```
 
-##Installation
+## Installation
 
-###Clone the repository:
+### Clone the repository:
 
 git clone https://github.com/beyzauzun-ai/ai-task-generator-flask.git
 cd ai-task-generator-flask
 
-###Install dependencies:
+### Install dependencies:
 
 pip install -r requirements.txt
 
@@ -58,26 +58,26 @@ Create a .env file and add your Gemini API key:
 
 GEMINI_API_KEY=your_api_key_here
 
-###Run the app locally:
+### Run the app locally:
 
 python app.py
-##Example Usage
+## Example Usage
 
-###Input:
+### Input:
 
 AI in healthcare
 
-###Output:
+### Output:
 
 - AI improves diagnostics by analyzing medical images and patient data.
 - Personalized treatment plans can be created with AI support.
 - AI accelerates drug discovery and pharmaceutical research.
 - 
-##Deployment
+## Deployment
 
 This project is deployed on Render.
 
-##Notes
+## Notes
 AI responses may vary depending on the prompt
 API key is required to run the project locally
 Author
