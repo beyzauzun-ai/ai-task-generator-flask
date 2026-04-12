@@ -1,6 +1,9 @@
 # AI Task Generator (Flask + Gemini)
 
-This project is an interactive AI-powered web application that generates insights based on user input.
+An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini API**.
+
+## Live Demo
+[Click here to try the app](https://ai-task-generator-flask.onrender.com)
 
 ## 📸 Demo
 
