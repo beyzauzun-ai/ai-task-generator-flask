@@ -2,7 +2,7 @@
 
 An AI-powered task generator built with **Flask**, **JavaScript**, and **Gemini API**.
 
-## 🌐Live Demo
+### 🌐 Live Demo
 [Click here to try the app](https://ai-task-generator-flask.onrender.com)
 
 ## 📸 Demo
