@@ -11,10 +11,12 @@ This project is an interactive AI-powered web application that generates insight
 ![Backend](backend.png)
 
 ## 🚀 Features
-- AI-powered content generation (Gemini API)
-- Flask backend
-- Simple frontend interface
-- Environment variable security (.env)
+
+- Generate AI-powered task ideas from a topic
+- Clean and responsive interface
+- Simple Flask backend integration
+- Gemini API support
+- Deployed on Render
 
 ## 🛠️ Tech Stack
 - Python (Flask)
