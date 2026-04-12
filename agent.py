@@ -3,11 +3,11 @@ import sys
 from dotenv import load_dotenv
 from litellm import completion
 
-
 def main():
-    load_dotenv()
+    load_dotenv(override=True)
 
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    print("Key son 6 karakter:", api_key[-6:] if api_key else "yok")
     if not api_key:
         print("GEMINI_API_KEY bulunamadı.")
         return
@@ -21,7 +21,7 @@ Keep it clear, simple, and readable.
 
     try:
         response = completion(
-            model="gemini/gemini-2.0-flash",
+            model="gemini/gemini-2.5-flash",
             api_key=api_key,
             messages=[
                 {"role": "user", "content": prompt}
